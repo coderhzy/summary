@@ -109,6 +109,122 @@ DOM树，是一颗树
 - attribute： 修改html属性，会改改变html结构
 - 两者都有可能引起DOM重新渲染
 ### BOM
+#### 题目
+1. 如何识别浏览器类型
+2. 分析拆解url各个部分
+#### 知识点
+- navigator
+- screen
+- location
+- history
+```JS
+// navigator
+const ua = navigator.userAgent;
+const isChrome = ua.indexOf('Chrome');
+console.log(isChrome);
+
+// screen
+console.log(screen.width);
+console.log(screen.height);
+
+// location
+console.log(location.href);
+console.log(location.protocol);
+console.log(location.host);
+console.log(location.search);
+console.log(location.hash); // #号后面
+console.log(location.pathname); // 路径
+
+// history
+history.back();
+history.forward();
+```
+
 ### 事件绑定
+#### 题目
+- 编写一个通用的事件监听函数
+- 描述时间冒泡的流程
+- 无限下拉的图片列表，如何监听每个图片的点击？
+#### 知识点
+- 事件绑定
+- 事件冒泡
+```JS
+const p1 = document.getElementById('p1');
+const body = document.body;
+p1.addEventListener('click', e => {
+    e.stopPropagation(); // 阻止冒泡
+    alert('激活');
+})
+body.addEventListener('click', e => {
+    alert('取消');
+})
+```
+- 事件代理
+  - 代码简介 ，减少浏览器内存占用,不滥用
+```JS
+const p3 = document.getElementById('div3');
+p3.addEventListener('click' , event => {
+    event.preventDefault(); // 阻止默认行为
+    const target = event.target;
+    if(target.nodeName === 'A'){
+        alert(target.innerHTML)
+    }
+})
+```
+#### 问题解答
+- 编写一个通用的时间监听函数
+```JS
+var bindFn = (elem,type,selector,fn) => {
+    if(fn == null){
+        fn = selector;
+        selector = null;
+    }
+    elem.addEventListener(type,e => {
+        const target = e.target;
+        if(selector){
+            // 代理绑定,matches函数判断正在触发的元素是否符合CSS选择器
+            if(target.matches(selector)) {
+                fn.call(target,e);
+            }
+        } else{
+            // 普通绑定
+            fn.call(target,e);
+        }
+    })
+}
+
+// 普通绑定
+const btn1 = document.getElementById('btn1')
+bindFn(btn1, 'click', function (event) {
+    // console.log(event.target) // 获取触发的元素
+    event.preventDefault() // 阻止默认行为
+    alert(this.innerHTML)
+})
+
+// 代理绑定
+const div3 = document.getElementById('div3')
+bindFn(div3, 'click', 'a', function (event) {
+    event.preventDefault()
+    alert(this.innerHTML)
+})
+```
+- 描述时间冒泡和捕获的流程
+ - 事件捕获是的意思是最不具体的节点应该最先受到事件，而最具体的节点应该最后收到事件。Document -> element(html) -> element(body) -> element(div)
+ - 事件冒泡是从最具体到最不具体. element(div) -> element(body) -> element(html) -> Document
+ - 应用场景： proxy
+- 无限下拉图片的点击
+  - 事件代理
+  - 用e.target获取触发元素
+  - 用matches来判断是否触发元素
+```JS
+const p3 = document.getElementById('div3');
+p3.addEventListener('click' , event => {
+    event.preventDefault(); // 阻止默认行为
+    const target = event.target;
+    if(target.nodeName === 'A'){
+        alert(target.innerHTML)
+    }
+})
+```
 ### ajax
 ### 存储 
