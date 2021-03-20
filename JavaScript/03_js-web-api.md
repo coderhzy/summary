@@ -227,4 +227,81 @@ p3.addEventListener('click' , event => {
 })
 ```
 ### ajax
+  #### 题目
+  - 手写一个简易的ajax
+  - 跨域的常用实现方式
+  #### 知识点
+  - XMLHttpRequest
+```JS
+// 手写一个XMLHttpRequest发送请求
+// GET请求
+const xhr = new XMLHttpRequest();
+xhr.open('GET','./data/test.json',false);
+xhr.onreadystatechange = function() {
+    if(xhr.readyState === 4){
+        if(xhr.status === 200){
+            console.log(xhr.responseText);
+        }
+    }
+}
+xhr.send(null);
+
+// POST请求
+const xhr = new XMLHttpRequest();
+xhr.open('POST','/login'.false);
+xhr.onreadystatechange = function (){
+    if(xhr.readyState == 4){
+        if(xhr.status === 200){
+            alert(xhr.responseText);
+        }
+    }
+}
+
+const postData = {
+    userName: 'zhangsan',
+    password: 'xxx'
+}
+xhr.send(JSON.stringify(postData));
+```
+  - 状态码
+```Text
+# xhr.readyState
+0（未初始化）： 还没调用send()方法
+1（载入）: 已调用send()方法，正在发送请求
+2（载入完成）: send()方法执行完成，已经接收到全部响应内容
+3（交互）： 正在解析响应内容
+4（完成）： 响应内容解析完成，可以在客户端调用
+
+# xhr.state
+2xx: 表示成功处理请求，如200
+3xx： 需要重定向，浏览器直接跳转，如301，302，304
+4xx：客户端请求错误，如404，403
+5xx: 服务器端错误
+```
+  - 跨域： 同源策略，跨域解决
+    - 什么是跨域(同源策略)
+    1. ajax请求时，浏览器要求当前网页和server必须同源（安全）
+    2. 同源： 协议、域名、端口，三者必须一致
+    3. **加载图片、CSS、JS可无视同源策略，标签引入**
+    4. <img/>可用于统计打点，可使用第三方统计服务
+    5. <link/><script>可以使用CDN，CDN一般都是外域
+    6. <script>可实现JSONP
+    7. 所有的跨域都必须经过server端允许和配合
+    8. 未经server端允许就实现跨域，说明浏览器有漏洞。
+    - JSONP
+    1. 访问https://www.baidu.com/，服务端一定返回一个html文件吗？ NO
+    2. 服务器可以任意动态拼接数据返回，只要符合html格式要求就行
+    3. 访问<script src="">，返回的JS非静态，服务器可以任意动态拼接数据返回
+    4. <script>可以绕过跨域
+    5. <script>可以获得跨域的数据，只要服务端配合
+    - CORS(服务端支持)
+```JS
+// 第二个参数填写跨域的域名称，不建议直接填写""*"
+response.setHeader('Access-Control-Allow-Origin','http://localhost:8081');
+response.setHeader('Access-Control-Allow-Header','X-Requested-With');
+response.setHeader('Access-Control-Allow-Methods','PUT，POST，GET，DELETE，OPTIONS');
+
+// 接收跨域的Cookie
+response.setHeader('Access-Control-Allow-Credenttials','true')
+```
 ### 存储 
