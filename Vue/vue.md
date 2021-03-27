@@ -28,3 +28,7 @@
     - **v-else**如果是不显示，则为display: none
   - v-if 和 v-show的区别？
   - v-if 和 v-show的场景？
+- 循环列表渲染
+  - 如何遍历对向？ 也可以使用v-for
+  - key的重要性。key不可乱写（如random或者index）
+  - v-for和v-if不能一起使用！

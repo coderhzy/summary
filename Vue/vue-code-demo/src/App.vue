@@ -3,7 +3,8 @@
     <!-- <TplDemo /> -->
     <!-- <WatchDemo /> -->
     <!-- <ClassDemo /> -->
-    <ConditionDemo />
+    <!-- <ConditionDemo /> -->
+    <ListDemo />
   </div>
 </template>
 
@@ -12,14 +13,16 @@
 // import ComputedDemo from './components/ComputedDemo'
 // import WatchDemo from './components/WatchDemo'
 // import ClassDemo from "./components/ClassDemo"
-import ConditionDemo from "./components/ConditionDemo"
+// import ConditionDemo from "./components/ConditionDemo"
+import ListDemo from "./components/ListDemo";
   export default {
     name: "app",
     components: {
       // TplDemo
       // WatchDemo
       // ClassDemo
-      ConditionDemo
+      // ConditionDemo
+      ListDemo
     }
   }
 </script>
