@@ -20,3 +20,11 @@
   - computed有缓存,data不变则不会重新计算computed
   - watch如何深度监听?
   - watch监听引用类型，拿不到oldVal
+- class
+  - 动态属性
+- 条件渲染
+  - v-if和v-else的用法，可使用变量，也可以使用 === 表达式
+    - **v-if**如果是不显示，则直接不构成DOM结构，性能不好
+    - **v-else**如果是不显示，则为display: none
+  - v-if 和 v-show的区别？
+  - v-if 和 v-show的场景？
