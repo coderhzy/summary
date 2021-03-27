@@ -4,7 +4,8 @@
     <!-- <WatchDemo /> -->
     <!-- <ClassDemo /> -->
     <!-- <ConditionDemo /> -->
-    <ListDemo />
+    <!-- <ListDemo /> -->
+    <EventDemo />
   </div>
 </template>
 
@@ -14,7 +15,8 @@
 // import WatchDemo from './components/WatchDemo'
 // import ClassDemo from "./components/ClassDemo"
 // import ConditionDemo from "./components/ConditionDemo"
-import ListDemo from "./components/ListDemo";
+// import ListDemo from "./components/ListDemo";
+import EventDemo from "./components/EventDemo"
   export default {
     name: "app",
     components: {
@@ -22,7 +24,8 @@ import ListDemo from "./components/ListDemo";
       // WatchDemo
       // ClassDemo
       // ConditionDemo
-      ListDemo
+      // ListDemo
+      EventDemo
     }
   }
 </script>
