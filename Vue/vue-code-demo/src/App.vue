@@ -5,7 +5,8 @@
     <!-- <ClassDemo /> -->
     <!-- <ConditionDemo /> -->
     <!-- <ListDemo /> -->
-    <EventDemo />
+    <!-- <EventDemo /> -->
+    <FormDemo />
   </div>
 </template>
 
@@ -16,7 +17,8 @@
 // import ClassDemo from "./components/ClassDemo"
 // import ConditionDemo from "./components/ConditionDemo"
 // import ListDemo from "./components/ListDemo";
-import EventDemo from "./components/EventDemo"
+// import EventDemo from "./components/EventDemo"
+import FormDemo from "./components/FormDemo"
   export default {
     name: "app",
     components: {
@@ -25,7 +27,8 @@ import EventDemo from "./components/EventDemo"
       // ClassDemo
       // ConditionDemo
       // ListDemo
-      EventDemo
+      // EventDemo
+      FormDemo
     }
   }
 </script>
