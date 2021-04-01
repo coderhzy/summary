@@ -69,3 +69,7 @@
   - v-model
   - 常见表单项 textarea,checkbox,radio,select
   - 修饰符 lazy,number,trim
+- Vue组件使用
+  - props和$emit
+  - 组件间通讯-自定义事件
+  - 组件生命周期

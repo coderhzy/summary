@@ -6,7 +6,9 @@
     <!-- <ConditionDemo /> -->
     <!-- <ListDemo /> -->
     <!-- <EventDemo /> -->
-    <FormDemo />
+    <!-- <FormDemo /> -->
+    <!-- <ComponentsDemo /> -->
+    <Compoent />
   </div>
 </template>
 
@@ -18,17 +20,22 @@
 // import ConditionDemo from "./components/ConditionDemo"
 // import ListDemo from "./components/ListDemo";
 // import EventDemo from "./components/EventDemo"
-import FormDemo from "./components/FormDemo"
+// import FormDemo from "./components/FormDemo"
+// import ComponentsDemo from "./components/ComponentsDemo/Index"
+import Compoent from "./components/Compoent/Index"
   export default {
     name: "app",
     components: {
+      // Input
       // TplDemo
       // WatchDemo
       // ClassDemo
       // ConditionDemo
       // ListDemo
       // EventDemo
-      FormDemo
+      // FormDemo
+      // ComponentsDemo
+      Compoent
     }
   }
 </script>
