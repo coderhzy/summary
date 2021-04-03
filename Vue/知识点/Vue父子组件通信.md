@@ -9,7 +9,7 @@ import Vue from 'vue'
 export default new Vue()
 ```
 
-1. /index.vue：父组件
+/index.vue：父组件
 ```vue
 <template>
   <div>
