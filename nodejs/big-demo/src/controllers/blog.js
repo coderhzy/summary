@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 // 博客相关的方法
-const getList = () => {
+const getBlogsList = () => {
     // 从数据库里拿数据
     // 先返回假数据
     return [{
@@ -21,7 +21,7 @@ const getList = () => {
 }
 
 // 获取博客详情数据
-const getDetail = (id) => {
+const getBlogDetail = (id) => {
     // 先返回一个间数据
     return {
         id: 5,
@@ -32,7 +32,34 @@ const getDetail = (id) => {
     }
 }
 
+// 创建新的博客
+const createNewBlog = (blogData = {}) => {
+    // 存到数据库
+    console.log('blogData', blogData = {})
+    return {
+        id: 1
+    }
+}
+
+// 更新博客
+const updataBlog = (id, blogData = {}) => {
+    console.log('id', id);
+    console.log('blogData', blogData)
+    return true;
+}
+
+// 删除博客
+const deleteBlog = (id) => {
+    console.log('id', id);
+
+    return true;
+}
+
+
 module.exports = {
-    getList,
-    getDetail
+    getBlogsList,
+    getBlogDetail,
+    createNewBlog,
+    updataBlog,
+    deleteBlog
 }
