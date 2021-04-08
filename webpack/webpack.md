@@ -16,5 +16,10 @@
 - 打包css，style-loader将js生成的css来解析，不可单独使用，引入在不同地方，css-loader:导入了css，css-loader识别css文件.sass-loader:解析sass，
 - autoprefixer: 给css属性加入浏览器厂商前缀
 - source-map: 建立js源文件和打包好的js文件的联系。为了方便找错
-- script: start- webpackserve
-- devServer
+- script: start-webpackserve
+- watch: 来监控文件来达到webpack自动打包
+- start: "webpack serve" -> webpackdevServer -> devServer：{ contentBase: "./dist" }
+- webpackdevServer: proxy来改变路径并配合changeOrigin: true，从而实现了请求转发和相对路径。以及了解pathRewrite，用于去掉api。只是用于开发环境。
+- HMR: webpack自动对比源文件的改变去更新。
+- Babel：babel-loader,@babel/cores,    @babel/preset-env
+- balbel/polyfill: 用来补充es6代码的实现，也就是说Promise以及map属于es6，低版本浏览器无法识别，我们使用ployfill将其转换成es5代码。
