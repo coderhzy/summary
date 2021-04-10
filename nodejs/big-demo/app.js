@@ -49,9 +49,11 @@ const serverHandler = (req, res) => {
         req.body = postData;
 
         // 博客相关的路由
-        const blogData = handleBlogRoute(req, res);
-        if (blogData) {
-            res.end(JSON.stringify(blogData));
+        const blogDataPromise = handleBlogRoute(req, res);
+        if (blogDataPromise) {
+            blogDataPromise.then((blogData) => {
+                res.end(JSON.stringify(blogData))
+            })
             return;
         }
 

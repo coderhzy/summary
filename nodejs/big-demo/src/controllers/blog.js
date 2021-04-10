@@ -1,23 +1,43 @@
-const mysql = require('mysql');
+const {
+    execSQL
+} = require('../db/mysql');
+
 // 博客相关的方法
-const getBlogsList = () => {
+const getBlogsList = (author, keyword) => {
     // 从数据库里拿数据
     // 先返回假数据
-    return [{
-            id: 1,
-            title: "标题1",
-            content: '内容1',
-            author: 'zhangsan',
-            createdAt: 1617636247757
-        },
-        {
-            id: 1,
-            title: "标题2",
-            content: '内容2',
-            author: 'lisi',
-            createdAt: 1617636281888
-        }
-    ]
+    // return [{
+    //         id: 1,
+    //         title: "标题1",
+    //         content: '内容1',
+    //         author: 'zhangsan',
+    //         createdAt: 1617636247757
+    //     },
+    //     {
+    //         id: 1,
+    //         title: "标题2",
+    //         content: '内容2',
+    //         author: 'lisi',
+    //         createdAt: 1617636281888
+    //     }
+    // ]
+
+    // 返回数据库数据
+    let sql = `select * from blogs where`;
+    if (author) {
+        sql += ` author = '${author}' `;
+    }
+
+    if (keyword) {
+        sql += `and title like '%${keyword}%' `;
+    }
+
+    return execSQL(sql);
+
+    // // promise
+    // execSQL(sql).then(res => {
+    //     console.log('resut', res);
+    // })
 }
 
 // 获取博客详情数据
