@@ -17,8 +17,10 @@
 4. [05_闭包应用&循环事件](deepJs/js/05_闭包应用&循环事件.md)
 5. [闭包作用域练习题](deepJs/test/闭包作用域练习题.md)
 6. [06_let&const区别](deepJs/js/06_let&const区别.md)
-
+7. [07_this](deepJs/js/07_this.md)
+8. [08_数据类型转换](deepJs/js/08_数据类型转换.md)
 
 
 ### deepAlgorithm
 1. [二分查找](./deepAlgorithm/二分查找.js)
+2. [插入排序](./deepAlgorithm/插入排序.js)
