@@ -16,6 +16,7 @@
 3. [04_闭包&浏览器垃圾回收](deepJs/js/04_闭包&浏览器垃圾回收.md)
 4. [05_闭包应用&循环事件](deepJs/js/05_闭包应用&循环事件.md)
 5. [闭包作用域练习题](deepJs/test/闭包作用域练习题.md)
+6. [06_let&const区别](deepJs/js/06_let&const区别.md)
 
 
 
