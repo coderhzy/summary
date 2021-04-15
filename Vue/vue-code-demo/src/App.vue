@@ -8,7 +8,8 @@
     <!-- <EventDemo /> -->
     <!-- <FormDemo /> -->
     <!-- <ComponentsDemo /> -->
-    <Compoent />
+    <!-- <Compoent /> -->
+    <ComponentsParChild />
   </div>
 </template>
 
@@ -22,7 +23,8 @@
 // import EventDemo from "./components/EventDemo"
 // import FormDemo from "./components/FormDemo"
 // import ComponentsDemo from "./components/ComponentsDemo/Index"
-import Compoent from "./components/Compoent/Index"
+// import Compoent from "./components/Compoent/Index"
+import ComponentsParChild from './ComponentsParChild/Index'
   export default {
     name: "app",
     components: {
@@ -35,7 +37,8 @@ import Compoent from "./components/Compoent/Index"
       // EventDemo
       // FormDemo
       // ComponentsDemo
-      Compoent
+      // Compoent
+      ComponentsParChild
     }
   }
 </script>
