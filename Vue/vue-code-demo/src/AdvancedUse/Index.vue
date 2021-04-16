@@ -37,16 +37,19 @@
         <button @click="handler">toggle</button> -->
 
     <!-- keep-alive -->
-    <button @click="changeState('A')">A</button>
+    <!-- <button @click="changeState('A')">A</button>
     <button @click="changeState('B')">B</button>
-    <button @click="changeState('C')">C</button>
+    <button @click="changeState('C')">C</button> -->
 
-    <keep-alive>
-      <!-- 优先使用v-show -->
+    <!-- 优先使用v-show -->
+    <!-- <keep-alive>
       <KeepAliveStateA v-if="state === 'A'" />
       <KeepAliveStateB v-if="state === 'B'" />
       <KeepAliveStateC v-if="state === 'C'" />
-    </keep-alive>
+    </keep-alive> -->
+
+    <!-- mixin -->
+    <MixinDemo />
   </div>
 </template>
 
@@ -56,9 +59,10 @@
 // import SlotDemo from './SlotDemo'
 // import ScopedSlotDemo from "./ScopedSlotDemo"
 // import NamedSlot from './NamedSlot'
-import KeepAliveStateA from "./KeepAliveStateA";
-import KeepAliveStateB from "./KeepAliveStateB";
-import KeepAliveStateC from "./KeepAliveStateC";
+// import KeepAliveStateA from "./KeepAliveStateA";
+// import KeepAliveStateB from "./KeepAliveStateB";
+// import KeepAliveStateC from "./KeepAliveStateC";
+import MixinDemo from "./MixinDemo";
 
 export default {
   components: {
@@ -68,42 +72,44 @@ export default {
     // ScopedSlotDemo
     // NamedSlot
     // Input:() => import('../ComponentsParChild/Input')
-    KeepAliveStateA,
-    KeepAliveStateB,
-    KeepAliveStateC,
+    // KeepAliveStateA,
+    // KeepAliveStateB,
+    // KeepAliveStateC,
+    MixinDemo,
   },
   data() {
     return {
-      name: "codehzy",
-      website: {
-        1: {
-          type: "text",
-        },
-        2: {
-          type: "text",
-        },
-        3: {
-          type: "image",
-        },
-      },
-      // NextTickName: "NextTick"
-      showInputDemo: false,
-      state: "A",
+      // name: "codehzy",
+      // website: {
+      //   1: {
+      //     type: "text",
+      //   },
+      //   2: {
+      //     type: "text",
+      //   },
+      //   3: {
+      //     type: "image",
+      //   },
+      // },
+      // // NextTickName: "NextTick"
+      // showInputDemo: false,
+      // state: "A",
+      name: "hzy",
     };
   },
   methods: {
-    handler() {
-      // this.showInputDemo = true
-      // !this.showInputDemo -> 不行
-      if (this.showInputDemo === false) {
-        this.showInputDemo = true;
-      } else {
-        this.showInputDemo = false;
-      }
-    },
-    changeState(state) {
-      this.state = state;
-    },
+    // handler() {
+    //   // this.showInputDemo = true
+    //   // !this.showInputDemo -> 不行
+    //   if (this.showInputDemo === false) {
+    //     this.showInputDemo = true;
+    //   } else {
+    //     this.showInputDemo = false;
+    //   }
+    // },
+    // changeState(state) {
+    //   this.state = state;
+    // },
   },
 };
 </script>
