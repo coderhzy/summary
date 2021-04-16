@@ -3,19 +3,24 @@
     <div>
         <!-- <p>{{name}}</p>
         <CustomVModel v-model="name"/> -->
-        <NextTick />
+        <!-- <NextTick /> -->
+        <SlotDemo>
+            {{name}}
+        </SlotDemo>
     </div>
 
 </template>
 
 <script>
 // import CustomVModel from './CustomVModel'
-import NextTick from './NextTick'
+// import NextTick from './NextTick'
+import SlotDemo from './SlotDemo'
 
 export default {
     components: {
         // CustomVModel
-        NextTick
+        // NextTick
+        SlotDemo
     },
     data() {
         return {
