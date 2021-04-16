@@ -1,18 +1,21 @@
 <template>
     <!-- 自定义v-model -->
     <div>
-        <p>{{name}}</p>
-        <CustomVModel v-model="name"/>
+        <!-- <p>{{name}}</p>
+        <CustomVModel v-model="name"/> -->
+        <NextTick />
     </div>
 
 </template>
 
 <script>
-import CustomVModel from './CustomVModel'
+// import CustomVModel from './CustomVModel'
+import NextTick from './NextTick'
 
 export default {
     components: {
-        CustomVModel
+        // CustomVModel
+        NextTick
     },
     data() {
         return {
