@@ -9,7 +9,8 @@
     <!-- <FormDemo /> -->
     <!-- <ComponentsDemo /> -->
     <!-- <Compoent /> -->
-    <ComponentsParChild />
+    <!-- <ComponentsParChild /> -->
+    <CustomVModel />
   </div>
 </template>
 
@@ -24,7 +25,8 @@
 // import FormDemo from "./components/FormDemo"
 // import ComponentsDemo from "./components/ComponentsDemo/Index"
 // import Compoent from "./components/Compoent/Index"
-import ComponentsParChild from './ComponentsParChild/Index'
+// import ComponentsParChild from './ComponentsParChild/Index'
+import CustomVModel from './AdvancedUse/Index'
   export default {
     name: "app",
     components: {
@@ -38,7 +40,8 @@ import ComponentsParChild from './ComponentsParChild/Index'
       // FormDemo
       // ComponentsDemo
       // Compoent
-      ComponentsParChild
+      // ComponentsParChild
+      CustomVModel
     }
   }
 </script>
