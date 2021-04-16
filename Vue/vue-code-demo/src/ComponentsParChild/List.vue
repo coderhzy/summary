@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import event from './event'
+
 export default {
     props: {
         list: {
@@ -27,7 +29,18 @@ export default {
     methods: {
         deleteItem(id) {
             this.$emit('delete',id)
+        },
+        // 兄弟组件绑定事件List,我们在Input触发
+        addTitleHandler(title) {
+            console.log('on add title',title)
         }
+    },
+    mounted() {
+        event.$on('onAddTitle', this.addTitleHandler)
+    },
+    beforeDestroy() {
+        // 及时销毁，否则可能造成内存泄漏 => 自定义事件要在beforeDestroy销毁
+        event.$off('onAddTitle', this.addTitleHandler)
     }
 }
 </script>
