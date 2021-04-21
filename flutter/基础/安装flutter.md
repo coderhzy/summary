@@ -98,3 +98,13 @@ pod setup
 // 注意安装过程中会有文件冲突， 按照终端报错去修改即可
 ```
 ![flutterToIos](../assets/flutterToIos.png)
+
+## flutter的web端安装坑
+[flutter-web构建](https://dart.dev/tutorials/web/get-started#4-create-a-web-app)
+**问题一**：主要集中在创建了工程以后，使用webdev serve会报错? 
+**报错信息**: 
+**解决方案**: 
+1. 在Project目录中执行flutter packages pub global activate webdev
+2. 再用webdev serve继续报错 Failed to precompile build_runner:build_runner:
+3. 再次使用pub upgrade
+4. 再webdev serve
