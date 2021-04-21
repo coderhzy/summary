@@ -101,6 +101,7 @@ pod setup
 
 ## flutter的web端安装坑
 [flutter-web构建](https://dart.dev/tutorials/web/get-started#4-create-a-web-app)
+[flutter-web-issue](https://github.com/dart-lang/build/issues/1676)
 **问题一**：主要集中在创建了工程以后，使用webdev serve会报错? 
 **报错信息**: 
 **解决方案**: 
